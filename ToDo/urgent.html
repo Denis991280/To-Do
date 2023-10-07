@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eaa87ea950.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <nav class="side-bar">
+            <ul>
+                <a href="#" class="logo"><li></li></a>
+                <a href="#"><li><i class="fa-solid fa-list-check fa-xl"></i></li></a>
+                <a href="#"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
+                <a href="#"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
+            </ul>
+
+            <ul>
+                <a href="#"><li><i class="fa-solid fa-arrows-rotate fa-xl"></i></li></a>
+                <a href="#"><li><i class="fa-solid fa-square-check fa-xl"></i></li></a>
+                <a href="#"><li><i class="fa-solid fa-trash fa-xl"></i></li></a>
+            </ul>
+        </nav>
+
+        <div class="grid-container">
+            <div class="tasks-by-day">
+                <ul>
+                    <a href="#" ><li><i class="fa-solid fa-calendar-day fa-md"></i> Today</li></a>
+                    <a href="#"><li class="link-active"><i class="fa-solid fa-file-export fa-md"></i>Tomorrow</li></a>
+                    <a href="#"><li><i class="fa-solid fa-calendar-week fa-md"></i> Next seven days</li></a>
+                    <a href="#"><li><i class="fa-solid fa-list-check fa-md"></i>All tasks</li></a>
+                </ul>
+            </div>
+
+            <div class="main-heading">
+                <h1><i class="fa-solid fa-calendar-day fa-xs"></i>Today's tasks</h1>
+                <button type="button" class="btn btn-success">Create new +</button>
+            </div>
+
+            <div class="date-grid-container">
+                <i class="fa-regular fa-calendar-days fa-xl"></i><h3 class="date"></h3>
+            </div>
+
+            <div class="to-do">
+                <p>todo</p>
+            </div>
+
+            <div class="main-section grid-col-span-2">
+
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
