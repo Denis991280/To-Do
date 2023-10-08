@@ -244,5 +244,6 @@ main    {
 /*End of the styling for the date container*/
 /*-----------------------------------------*/
 
-
-
+div {
+    border: 1px solid;
+}
