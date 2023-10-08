@@ -3,7 +3,7 @@ let storeDate = new Date();
 const dateToday = document.getElementsByClassName("date");
 dateToday[0].innerHTML = "Today: " + storeDate.toLocaleString('default', { month: 'long' }) + " " + storeDate.getDate() + "." + storeDate.getFullYear() + ".";
 
-const itemsArray = localStorage.getItem('dailyItems') ? JSON.parse(localStorage.getItem('dailyItems')) : [];
+const itemsArray = localStorage.getItem('itemsFuture') ? JSON.parse(localStorage.getItem('itemsFuture')) : [];
 
 document.querySelector("#enter").addEventListener("click", () => {
   const item = document.querySelector("#item")
@@ -89,19 +89,19 @@ function activateCancelListeners(){
 
 function createItem(item){
   itemsArray.push(item.value)
-  localStorage.setItem('dailyItems', JSON.stringify(itemsArray))
+  localStorage.setItem('itemsFuture', JSON.stringify(itemsArray))
   location.reload()
 }
 
 function deleteItem(i){
   itemsArray.splice(i,1)
-  localStorage.setItem('dailyItems', JSON.stringify(itemsArray))
+  localStorage.setItem('itemsFuture', JSON.stringify(itemsArray))
   location.reload()
 }
 
 function updateItem(text, i){
   itemsArray[i] = text
-  localStorage.setItem('dailyItems', JSON.stringify(itemsArray))
+  localStorage.setItem('itemsFuture', JSON.stringify(itemsArray))
   location.reload()
 }
 

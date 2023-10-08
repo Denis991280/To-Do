@@ -4,18 +4,10 @@ const dateToday = document.getElementsByClassName("date");
 dateToday[0].innerHTML = "Today: " + storeDate.toLocaleString('default', { month: 'long' }) + " " + storeDate.getDate() + "." + storeDate.getFullYear() + ".";
 
 const itemsArray = localStorage.getItem('dailyItems') ? JSON.parse(localStorage.getItem('dailyItems')) : [];
+const itemsArray2 = localStorage.getItem('itemsUrgent') ? JSON.parse(localStorage.getItem('itemsUrgent')) : [];
+const itemsArray3 = localStorage.getItem('itemsFuture') ? JSON.parse(localStorage.getItem('itemsFuture')) : [];
 
-document.querySelector("#enter").addEventListener("click", () => {
-  const item = document.querySelector("#item")
-  createItem(item)
-})
 
-document.querySelector("#item").addEventListener("keypress", (e) => {
-  if(e.key === "Enter"){
-    const item = document.querySelector("#item")
-    createItem(item)
-  }
-})
 
 
 function displayItems(){
@@ -24,6 +16,46 @@ function displayItems(){
     items += `<div class="item">
                 <div class="input-controller">
                   <textarea disabled>${itemsArray[i]}</textarea>
+                  <div class="edit-controller">
+                  <div>
+                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
+                  </div>
+                  <div>
+                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
+                  </div>
+                  </div>
+                </div>
+                <div class="update-controller">
+                  <button class="saveBtn">Save</button>
+                  <button class="cancelBtn">Cancel</button>
+                </div>
+              </div>`
+  }
+
+  for(let i = 0; i < itemsArray2.length; i++){
+    items += `<div class="item">
+                <div class="input-controller">
+                  <textarea disabled>${itemsArray2[i]}</textarea>
+                  <div class="edit-controller">
+                  <div>
+                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
+                  </div>
+                  <div>
+                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
+                  </div>
+                  </div>
+                </div>
+                <div class="update-controller">
+                  <button class="saveBtn">Save</button>
+                  <button class="cancelBtn">Cancel</button>
+                </div>
+              </div>`
+  }
+
+  for(let i = 0; i < itemsArray3.length; i++){
+    items += `<div class="item">
+                <div class="input-controller">
+                  <textarea disabled>${itemsArray3[i]}</textarea>
                   <div class="edit-controller">
                   <div>
                   Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
@@ -87,21 +119,17 @@ function activateCancelListeners(){
   })
 }
 
-function createItem(item){
-  itemsArray.push(item.value)
-  localStorage.setItem('dailyItems', JSON.stringify(itemsArray))
-  location.reload()
-}
+
 
 function deleteItem(i){
   itemsArray.splice(i,1)
-  localStorage.setItem('dailyItems', JSON.stringify(itemsArray))
+  localStorage.setItem('itemsUrgent', JSON.stringify(itemsArray))
   location.reload()
 }
 
 function updateItem(text, i){
   itemsArray[i] = text
-  localStorage.setItem('dailyItems', JSON.stringify(itemsArray))
+  localStorage.setItem('itemsUrgent', JSON.stringify(itemsArray))
   location.reload()
 }
 

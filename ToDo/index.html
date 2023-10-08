@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eaa87ea950.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="jsCalendar.css">
+
 </head>
 <body>
     <main>
@@ -16,12 +18,12 @@
             <ul>
                 <a href="#" class="logo"><li></li></a>
                 <a href="allTasks.html"><li><i class="fa-solid fa-list-check fa-xl"></i></li></a>
-                <a href="#"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
+                <a href="#" onclick="myFunction()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
                 <a href="#"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
             </ul>
 
             <ul>
-                <a href="#"><li><i class="fa-solid fa-arrows-rotate fa-xl"></i></li></a>
+                <a href="#" onclick="refreshFunction()"><li><i class="fa-solid fa-arrows-rotate fa-xl"></i></li></a>
                 <a href="#"><li><i class="fa-solid fa-square-check fa-xl"></i></li></a>
                 <a href="#"><li><i class="fa-solid fa-trash fa-xl"></i></li></a>
             </ul>
@@ -30,9 +32,9 @@
         <div class="grid-container">
             <div class="tasks-by-day">
                 <ul>
-                    <a href="index.html"><li class="link-active"><i class="fa-solid fa-file-export fa-md"></i>Daily tasks</li></a>
-                    <a href="futureTasks.html"><li><i class="fa-solid fa-calendar-week fa-md"></i> For the future</li></a>
-                    <a href="urgent.html" ><li><i class="fa-solid fa-calendar-day fa-md"></i> Urgent tasks</li></a>
+                    <a href="index.html"><li class="link-active"><i class="fa-solid fa-calendar-day fa-md link-active"></i>Daily tasks</li></a>
+                    <a href="futureTasks.html"><li><i class="fa-solid fa-clipboard-list fa-md"></i> For the future</li></a>
+                    <a href="urgent.html" ><li><i class="fa-solid fa-triangle-exclamation fa-md"></i>Urgent tasks</li></a>
                     <a href="allTasks.html"><li><i class="fa-solid fa-list-check fa-md"></i>All tasks</li></a>
                 </ul>
             </div>
@@ -41,7 +43,7 @@
                 <h1><i class="fa-solid fa-calendar-day fa-xs"></i>Daily tasks</h1>
                 <div class="to-do-input">
                     <input type="text" id="item" placeholder="Enter a title for your task">
-                    <button id="enter" class="btn btn-success">Create new task</button>
+                    <button id="enter" class="btn btn-success">Create new task +</button>
                 </div>
             </div>
 
@@ -50,7 +52,12 @@
             </div>
 
             <div class="to-do">
+                <div class="auto-jsCalendar">
 
+                </div>
+                <div class="logo">
+                    <img src="Images/green-pencil-with-positive-questionnaire.jpg" width="200px" height="220px">
+                </div>
             </div>
 
             <div class="main-section grid-col-span-2">
@@ -62,5 +69,6 @@
     </main>
 
     <script src="script.js" defer></script>
+    <script type="text/javascript" src="jsCalendar.js"></script>
 </body>
 </html>
