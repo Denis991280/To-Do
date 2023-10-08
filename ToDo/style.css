@@ -5,6 +5,7 @@
 }
 
 
+
 /* Styling for the navigational bar */
 .side-bar {
     display: flex;
@@ -42,6 +43,7 @@
 /*---------------------------------------*/
 
 
+
 /*Styling on the grid container for the whole page*/
 main    {
     display: flex;
@@ -58,8 +60,12 @@ main    {
     grid-template-rows: 8% 1fr 2fr 2fr;
     width: 100%;
 }
+/*End of styling for the grid container of whole page*/
+/*---------------------------------------------------*/
 
-/*Styling for the tasks by day container*/
+
+
+/*Styling for the tasks by priority container*/
 .tasks-by-day {
     grid-row-start: 1;
     grid-row: 1 / span 2;
@@ -98,8 +104,10 @@ main    {
     border: 10px solid #DCE2F3;
     border-radius: 10px;
 }
-/*End of styling for the tasks by day container*/
+/*End of styling for the tasks by priority container*/
 /*--------------------------------------*/
+
+
 
 /*Start of styling for the heading*/
 .main-heading {
@@ -153,17 +161,56 @@ main    {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#to-do {
-    grid-row-start: 1;
-    grid-row: 3 / span 2;
+.to-do-input {
+    display: flex;
+    margin-right: 5%;
+    gap: 5%;
 }
 
+.to-do-input input{
+    width: 350px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.to-do-input input::placeholder {
+    text-align: center;
+}
+.to-do-input input:focus::placeholder {
+    color: white;
+}
+/*End of styling for the heading*/
+/*--------------------------------*/
+
+
+
+/*Start of styling for left side-section*/
+.to-do {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    grid-row-start: 1;
+    grid-row: 3 / span 2;
+    margin-top: 5%;
+}
+/*End of styling for left side-section*/
+/*------------------------------------*/
+
+
+
+/*Styling for the main section*/
 .main-section {
     grid-row: span 3;
     background-image: url("Images/creative-flat-lay-photo-workspace-desk.jpg");
     background-size: cover;
     -webkit-animation: myfirst 3s;
      animation: myfirst 3s;
+  }
+  .to-do-list {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 
   @-webkit-keyframes myfirst {
@@ -175,6 +222,10 @@ main    {
     from {opacity: 0;}
     to {opacity: 1;}
   }
+/*End of styling for the main section*/
+/*-----------------------------------*/
+
+
 
 /*Styling for the date container*/
 .date-grid-container {
@@ -192,4 +243,6 @@ main    {
 }
 /*End of the styling for the date container*/
 /*-----------------------------------------*/
+
+
 
