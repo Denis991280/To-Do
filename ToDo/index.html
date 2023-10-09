@@ -43,7 +43,7 @@
                 <h1><i class="fa-solid fa-calendar-day fa-xs"></i>Daily tasks</h1>
                 <div class="to-do-input">
                     <input type="text" id="item" placeholder="Enter a title for your task">
-                    <button id="enter" class="btn btn-success">Create new task +</button>
+                    <button onclick="addTask()" id="enter" class="btn btn-success">Create new task +</button>
                 </div>
             </div>
 
@@ -61,9 +61,9 @@
             </div>
 
             <div class="main-section grid-col-span-2">
-                <div class="to-do-list" >
+                <ul id="to-do-list" >
                     
-                </div>
+                </ul>
             </div>
         </div>
     </main>
