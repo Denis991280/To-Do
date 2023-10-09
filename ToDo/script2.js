@@ -110,12 +110,12 @@ window.onload = function() {
 };
 
 function myFunction() {
-  let x = document.querySelector(".auto-jsCalendar");
+  let calendarDisplay = document.querySelector(".auto-jsCalendar");
 
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  if (calendarDisplay.style.display === "block") {
+    calendarDisplay.style.display = "none";
   } else {
-    x.style.display = "block";
+    calendarDisplay.style.display = "block";
   }
 }
 
