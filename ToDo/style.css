@@ -48,7 +48,7 @@ main {
 
 
 /*Styling on the grid container for the whole page*/
-main    {
+main {
     display: flex;
 }
 
@@ -225,87 +225,39 @@ main    {
     -webkit-animation: myfirst 3s;
      animation: myfirst 3s;
   }
-  .to-do-list {
+  #to-do-list {
     margin-top: 15%;
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
     height: 68vh;
+    gap: 2%;
+    font-size: 1.3rem;
   }
 
-  .item {
-    margin-top: 2%;
+  #to-do-list li{
     background-color: #DCE2F3;
-    padding: 5px;
-    border-radius: 10px;
+    list-style-type: none;
+    width: 600px;
+    height: 60px;
+    padding: 15px 10px 10px 10px;
+    border-radius: 15px;
   }
+ 
+ .deleteBtn, .editBtn {
+    float: right;
+    padding: 10px;
+    margin-top: 1%;
+ }
 
-  .input-controller {
-    display: flex;
-    gap: 10px;
-  }
-
-  .input-controller textarea{
-    width: 500px;
-    height: 50px;
-    resize: none;
-    border-radius: 10px;
-    padding: 8px;
-    background:transparent;
-    border: none;
-  }
-
-  .edit-controller {
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  .checked {
+    text-decoration: line-through;
   }
 
   .deleteBtn:hover {
     transform: scale(1.4);
     color: rgb(235, 52, 52) !important;
-}
-
-.update-controller {
-    display: none;
-    }
-
-  .saveBtn {
-    margin-left: 10px;
-    padding: 2px;
-    font-size: 0.8rem;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #fff;
-    background-color: #3e87a3;
-}  
-
-.cancelBtn {
-    padding: 2px;
-    font-size: 0.8rem;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #fff;
-    background-color: #d84e36;
-}  
-
-
-.saveBtn:hover {
-    color: #fff;
-    background-color: #016e1b;
-}
-
-.cancelBtn:hover {
-    color: #fff;
-    background-color: #db2b2b;
 }
 
   @-webkit-keyframes myfirst {
