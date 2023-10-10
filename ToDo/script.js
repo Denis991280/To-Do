@@ -20,13 +20,21 @@ function addTask() {
   saveStorage();
 }
 
+let editBtn = document.querySelector(".editBtn");
 
 
 todoContainer.addEventListener("click", function(e){
   if(e.target.tagName === "LI") {
     e.target.classList.toggle("checked")
     saveStorage();
-  } 
+  } else if (e.target.tagName === "I"){
+    editBtn.onclick = function () {
+      var p = prompt("Edit your entry");
+      var entry = this.parentElement.getElementsByClassName("userEntry")[0];
+      entry.innerText = p;
+    }
+  }
+
   else if (e.target.tagName === "I"){
     e.target.parentElement.parentElement.remove();
     saveStorage();
