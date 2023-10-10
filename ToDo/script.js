@@ -6,6 +6,7 @@ function addTask() {
     alert("Task name can't be empty!")
   } else {
     let listItem = document.createElement("li");
+    listItem.className = "userEntry"
     listItem.innerHTML = inputTask.value;
     todoContainer.appendChild(listItem);
     let deleteIcon = document.createElement("span");
