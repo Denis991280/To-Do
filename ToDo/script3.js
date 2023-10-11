@@ -22,22 +22,19 @@ function displayItems(){
   let items = ""
   for(let i = 0; i < itemsArray.length; i++){
     items += `<div class="item">
-                <div class="input-controller">
-                  <textarea disabled>${itemsArray[i]}</textarea>
-                  <div class="edit-controller">
-                  <div>
-                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
-                  </div>
-                  <div>
-                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
-                  </div>
-                  </div>
-                </div>
-                <div class="update-controller">
-                  <button class="saveBtn">Save</button>
-                  <button class="cancelBtn">Cancel</button>
-                </div>
-              </div>`
+    <div class="input-controller">
+    <p contenteditable="true" class="select">${itemsArray[i]}</p>
+    <div class="edit-controller">
+    <div>
+    <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
+    </div>
+    </div>
+  </div>
+  <div class="update-controller">
+    <button class="saveBtn">Save</button>
+    <button class="cancelBtn">Cancel</button>
+  </div>
+</div>`
   }
   document.querySelector(".to-do-list").innerHTML = items
   activateDeleteListeners()

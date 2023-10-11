@@ -10,7 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eaa87ea950.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="jsCalendar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+    integrity= 
+"sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww=="
+    crossorigin="anonymous"> 
+</script> 
     <script src="script.js" defer></script>
+
 </head>
 <body>
     <main>
@@ -18,8 +24,8 @@
             <ul>
                 <a href="#" class="logo"><li></li></a>
                 <a href="allTasks.html"><li><i class="fa-solid fa-list-check fa-xl"></i></li></a>
-                <a href="#" onclick="myFunction()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
-                <a href="#"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
+                <a href="#" onclick="calendarToggle()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
+                <a href="#" onclick="searchToggle()"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
             </ul>
 
             <ul>
@@ -51,6 +57,18 @@
             </div>
 
             <div class="to-do">
+                <form> 
+                    <div class="container-fluid" align="center"> 
+                        <input type="text" size="25"
+                            placeholder="Search tasks" id="searched"> 
+            
+                        <button type="button" class="searchBtn btn-success" onclick="highlight('0');"> 
+            
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>   
+                        </button> 
+                    </div> 
+                </form> 
+
                 <div class="auto-jsCalendar">
 
                 </div>
@@ -60,11 +78,14 @@
             </div>
 
             <div class="main-section grid-col-span-2">
+                
                 <div class="to-do-list" >
                     
                 </div>
             </div>
         </div>
+
+
     </main>
 
     <script type="text/javascript" src="jsCalendar.js"></script>

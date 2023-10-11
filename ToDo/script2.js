@@ -23,13 +23,10 @@ function displayItems(){
   for(let i = 0; i < itemsArray.length; i++){
     items += `<div class="item">
                 <div class="input-controller">
-                  <textarea disabled>${itemsArray[i]}</textarea>
+                  <p contenteditable="true" class="select">${itemsArray[i]}</p>
                   <div class="edit-controller">
                   <div>
-                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
-                  </div>
-                  <div>
-                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
+                  <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
                   </div>
                   </div>
                 </div>
@@ -39,51 +36,16 @@ function displayItems(){
                 </div>
               </div>`
   }
+
   document.querySelector(".to-do-list").innerHTML = items
   activateDeleteListeners()
-  activateEditListeners()
-  activateSaveListeners()
-  activateCancelListeners()
 }
 
 function activateDeleteListeners(){
   let deleteBtn = document.querySelectorAll(".deleteBtn")
   deleteBtn.forEach((dB, i) => {
     dB.addEventListener("click", () => { 
-      deleteItem(i) })
-  })
-}
-
-function activateEditListeners(){
-  const editBtn = document.querySelectorAll(".editBtn")
-  const updateController = document.querySelectorAll(".update-controller")
-  const inputs = document.querySelectorAll(".input-controller textarea")
-  editBtn.forEach((eB, i) => {
-    eB.addEventListener("click", () => { 
-      updateController[i].style.display = "block"
-      inputs[i].disabled = false })
-  })
-}
-
-function activateSaveListeners(){
-  const saveBtn = document.querySelectorAll(".saveBtn")
-  const inputs = document.querySelectorAll(".input-controller textarea")
-  saveBtn.forEach((sB, i) => {
-    sB.addEventListener("click", () => {
-      updateItem(inputs[i].value, i)
-    })
-  })
-}
-
-function activateCancelListeners(){
-  const cancelBtn = document.querySelectorAll(".cancelBtn")
-  const updateController = document.querySelectorAll(".update-controller")
-  const inputs = document.querySelectorAll(".input-controller textarea")
-  cancelBtn.forEach((cB, i) => {
-    cB.addEventListener("click", () => {
-      updateController[i].style.display = "none"
-      inputs[i].disabled = true
-      inputs[i].style.border = "none"
+      deleteItem(i) 
     })
   })
 }
@@ -100,55 +62,47 @@ function deleteItem(i){
   location.reload()
 }
 
-function updateItem(text, i){
-  itemsArray[i] = text
-  localStorage.setItem('itemsFuture', JSON.stringify(itemsArray))
-  location.reload()
-}
-
 window.onload = function() {
   displayItems()
 };
 
-function myFunction() {
-  let calendarDisplay = document.querySelector(".auto-jsCalendar");
+function calendarToggle() {
+  let o = document.querySelector(".auto-jsCalendar");
 
-  if (calendarDisplay.style.display === "block") {
-    calendarDisplay.style.display = "none";
+  if (o.style.display === "block") {
+    o.style.display = "none";
   } else {
-    calendarDisplay.style.display = "block";
+    o.style.display = "block";
   }
 }
 
-const input = document.getElementById("searchInput")
+function searchToggle() {
+  let x = document.querySelector("#searched");
+  let y = document.querySelector(".searchBtn");
+  
 
-input.addEventListener("keyup", () => {
-    const filter = input.value.toUpperCase();
+  if (x.style.display === "inline-block" && y.style.display === "inline-block") {
+    x.style.display = "none";
+    y.style.display = "none";
+  } else {
+    x.style.display = "inline-block";
+    y.style.display = "inline-block";
+  }
+}
 
-    const paragraphs = document.querySelectorAll(".input-controller");
+function highlight(param) { 
 
-    if(filter === "") {
-      paragraphs.forEach(p => {
-        p.innerHTML = p.textContent;
-      })
-      return;
-    }
-    paragraphs.forEach(p => {
+  let markText = new Mark(document.querySelectorAll(".select")); 
 
-      let txtValue = p.textContent
+  markText.unmark(); 
 
-      if(txtValue.toUpperCase().indexOf(filter) > -1) {
-        txtValue = txtValue.replace(
-          new RegExp(filter, "gi"),
-          '<span class="highlight">$&</span>'
-        );
-        p.innerHTML = txtValue;
-      } else {
-        p.innerHTML = txtValue;
-      }
-    })
-})
+  markText.mark( 
+    document.getElementById("searched").value, 
+    { className: 'a' + param }
+  ); 
+} 
 
 function refreshFunction() {
   location.reload(true);
 }
+

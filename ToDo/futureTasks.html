@@ -18,8 +18,8 @@
             <ul>
                 <a href="#" class="logo"><li></li></a>
                 <a href="allTasks.html"><li><i class="fa-solid fa-list-check fa-xl"></i></li></a>
-                <a href="#" onclick="myFunction()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
-                <a href="#"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
+                <a href="#" onclick="calendarToggle()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
+                <a href="#" onclick="searchToggle()"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
             </ul>
 
             <ul>
@@ -51,8 +51,18 @@
             </div>
 
             <div class="to-do">
+                <form> 
+                    <div class="container-fluid" align="center"> 
+                        <input type="text" size="25"
+                            placeholder="Search tasks" id="searched"> 
+            
+                        <button type="button" class="searchBtn btn-success" onclick="highlight('0');"> 
+            
+                        <i class="fa-solid fa-magnifying-glass fa-xl"></i>   
+                        </button> 
+                    </div> 
+                </form> 
 
-                <input type="text" id="searchInput" placeholder="search">
                 <div class="auto-jsCalendar">
                     
                 </div>

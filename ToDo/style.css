@@ -203,9 +203,42 @@ main    {
     grid-row: 3 / span 2;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content:space-between;
+    margin: 5%;
     align-items: center;
     
+}
+
+.searchBtn {
+    margin-left:-5px;
+    height:32px;
+    width:35px; 
+    background-color:#0084FF; 
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: none;
+
+}
+
+#searched {
+    height: 32px; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; border: 1px solid;
+    display: none;
+}
+
+.searchBtn {
+    color: #fff;
+    background-color: #0084FF;
+    border-color: #0084FF;
+  }
+
+.searchBtn:hover {
+    color: #fff;
+    background-color: #3797f1;
+    border-color: #3797f1;
+    cursor:pointer;
 }
 
 .auto-jsCalendar {
@@ -243,7 +276,22 @@ main    {
 
   .input-controller {
     display: flex;
+    align-items: center;
     gap: 10px;
+  }
+
+  .input-controller p {
+    display: flex;
+    align-items: center;
+  }
+
+  .select {
+    width: 500px;
+    height: 50px;
+    resize: none;
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
   }
 
   .input-controller textarea{
@@ -252,7 +300,7 @@ main    {
     resize: none;
     border-radius: 10px;
     padding: 8px;
-    background:transparent;
+    /* background:transparent; */
     border: none;
   }
 
@@ -342,3 +390,10 @@ main    {
 }
 /*End of the styling for the date container*/
 /*-----------------------------------------*/
+
+
+mark.a0 { 
+    color: black; 
+    padding: 5px; 
+    background: greenyellow; 
+} 
