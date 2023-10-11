@@ -105,6 +105,7 @@ function updateItem(text, i){
   location.reload()
 }
 
+
 window.onload = function() {
   displayItems()
 };

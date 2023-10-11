@@ -39,6 +39,7 @@ function displayItems(){
                 </div>
               </div>`
   }
+
   document.querySelector(".to-do-list").innerHTML = items
   activateDeleteListeners()
   activateEditListeners()
@@ -49,7 +50,9 @@ function displayItems(){
 function activateDeleteListeners(){
   let deleteBtn = document.querySelectorAll(".deleteBtn")
   deleteBtn.forEach((dB, i) => {
-    dB.addEventListener("click", () => { deleteItem(i) })
+    dB.addEventListener("click", () => { 
+      deleteItem(i) 
+    })
   })
 }
 

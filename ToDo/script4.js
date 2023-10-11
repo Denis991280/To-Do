@@ -9,7 +9,6 @@ const itemsArray3 = localStorage.getItem('itemsFuture') ? JSON.parse(localStorag
 
 
 
-
 function displayItems(){
   let items = ""
   for(let i = 0; i < itemsArray.length; i++){
@@ -17,12 +16,7 @@ function displayItems(){
                 <div class="input-controller">
                   <textarea disabled>${itemsArray[i]}</textarea>
                   <div class="edit-controller">
-                  <div>
-                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
-                  </div>
-                  <div>
-                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
-                  </div>
+
                   </div>
                 </div>
                 <div class="update-controller">
@@ -37,12 +31,6 @@ function displayItems(){
                 <div class="input-controller">
                   <textarea disabled>${itemsArray2[i]}</textarea>
                   <div class="edit-controller">
-                  <div>
-                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
-                  </div>
-                  <div>
-                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
-                  </div>
                   </div>
                 </div>
                 <div class="update-controller">
@@ -57,12 +45,6 @@ function displayItems(){
                 <div class="input-controller">
                   <textarea disabled>${itemsArray3[i]}</textarea>
                   <div class="edit-controller">
-                  <div>
-                  Delete: <i class="fa-solid fa-xmark fa-lg deleteBtn"></i>
-                  </div>
-                  <div>
-                    Edit:  <i class="fa-solid fa-pencil fa-lg editBtn"></i>
-                  </div>
                   </div>
                 </div>
                 <div class="update-controller">
@@ -72,65 +54,6 @@ function displayItems(){
               </div>`
   }
   document.querySelector(".to-do-list").innerHTML = items
-  activateDeleteListeners()
-  activateEditListeners()
-  activateSaveListeners()
-  activateCancelListeners()
-}
-
-function activateDeleteListeners(){
-  let deleteBtn = document.querySelectorAll(".deleteBtn")
-  deleteBtn.forEach((dB, i) => {
-    dB.addEventListener("click", () => { deleteItem(i) })
-  })
-}
-
-function activateEditListeners(){
-  const editBtn = document.querySelectorAll(".editBtn")
-  const updateController = document.querySelectorAll(".update-controller")
-  const inputs = document.querySelectorAll(".input-controller textarea")
-  editBtn.forEach((eB, i) => {
-    eB.addEventListener("click", () => { 
-      updateController[i].style.display = "block"
-      inputs[i].disabled = false })
-  })
-}
-
-function activateSaveListeners(){
-  const saveBtn = document.querySelectorAll(".saveBtn")
-  const inputs = document.querySelectorAll(".input-controller textarea")
-  saveBtn.forEach((sB, i) => {
-    sB.addEventListener("click", () => {
-      updateItem(inputs[i].value, i)
-    })
-  })
-}
-
-function activateCancelListeners(){
-  const cancelBtn = document.querySelectorAll(".cancelBtn")
-  const updateController = document.querySelectorAll(".update-controller")
-  const inputs = document.querySelectorAll(".input-controller textarea")
-  cancelBtn.forEach((cB, i) => {
-    cB.addEventListener("click", () => {
-      updateController[i].style.display = "none"
-      inputs[i].disabled = true
-      inputs[i].style.border = "none"
-    })
-  })
-}
-
-
-
-function deleteItem(i){
-  itemsArray.splice(i,1)
-  localStorage.setItem('itemsUrgent', JSON.stringify(itemsArray))
-  location.reload()
-}
-
-function updateItem(text, i){
-  itemsArray[i] = text
-  localStorage.setItem('itemsUrgent', JSON.stringify(itemsArray))
-  location.reload()
 }
 
 window.onload = function() {
