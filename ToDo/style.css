@@ -256,6 +256,10 @@ main    {
     border: none;
   }
 
+  .highlight {
+    background-color: yellow;
+  }
+
   .edit-controller {
     padding: 8px;
     display: flex;
