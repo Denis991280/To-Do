@@ -102,6 +102,15 @@ main    {
     margin: 5% 8% 5% 4%;
 }
 
+.dailyCounterActive {
+    color: #1F9615;
+    float: right;
+    margin-right: 8px;
+    background-color: lightgrey;
+    padding: 4px 10px;
+    border-radius: 50%;
+}
+
 .link-active {
     background-color: #DCE2F3;
     border: 5px solid #DCE2F3;

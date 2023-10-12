@@ -5,6 +5,9 @@ dateToday[0].innerHTML = "Today: " + storeDate.toLocaleString('default', { month
 
 const itemsArray = localStorage.getItem('dailyItems') ? JSON.parse(localStorage.getItem('dailyItems')) : [];
 
+let dailyCount = document.querySelector(".dailyCounterActive");
+
+
 document.querySelector("#enter").addEventListener("click", () => {
   const item = document.querySelector("#item")
   createItem(item)
@@ -35,6 +38,9 @@ function displayItems(){
                   <button class="cancelBtn">Cancel</button>
                 </div>
               </div>`
+
+  dailyCount.innerHTML++;
+
   }
 
   document.querySelector(".to-do-list").innerHTML = items
@@ -46,6 +52,7 @@ function activateDeleteListeners(){
   deleteBtn.forEach((dB, i) => {
     dB.addEventListener("click", () => { 
       deleteItem(i) 
+      dailyCount--;
     })
   })
 }
