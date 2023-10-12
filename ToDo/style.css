@@ -183,12 +183,12 @@ main    {
 
 .to-do-input {
     display: flex;
-    margin-right: 5%;
+    margin-left: 5%;
     gap: 5%;
 }
 
 .to-do-input input{
-    width: 350px;
+    width: 250px;
     text-align: center;
     font-size: 1rem;
     border-radius: 5px;
@@ -289,11 +289,6 @@ main    {
     gap: 10px;
   }
 
-  .input-controller p {
-    display: flex;
-    align-items: center;
-  }
-
   .select {
     width: 500px;
     height: 50px;
@@ -301,6 +296,7 @@ main    {
     border-radius: 10px;
     padding: 8px;
     border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
   .input-controller textarea{
@@ -310,17 +306,18 @@ main    {
     border-radius: 10px;
     padding: 8px;
     background:transparent;
-  }
-
-  .highlight {
-    background-color: yellow;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    font-family: 'Kalam', cursive;
+    font-weight: bolder;
   }
 
   .edit-controller {
     padding: 8px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
+    margin-top: 1%;
   }
 
   .deleteBtn:hover {
@@ -347,6 +344,7 @@ main    {
 
 .cancelBtn {
     padding: 2px;
+    margin-left: 5px;
     font-size: 0.8rem;
     text-align: center;
     vertical-align: middle;
@@ -400,8 +398,8 @@ main    {
 /*-----------------------------------------*/
 
 
-mark.a0 { 
+/* mark.a0 { 
     color: black; 
     padding: 5px; 
     background: greenyellow; 
-} 
+}  */

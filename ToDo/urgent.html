@@ -10,21 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/eaa87ea950.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="jsCalendar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"
+    integrity= 
+"sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww=="
+    crossorigin="anonymous"> 
+</script> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <script src="script3.js" defer></script>
+
 </head>
 <body>
     <main>
         <nav class="side-bar">
             <ul>
-                <a href="#" class="logo"><li></li></a>
+                <a href="#" onclick="createToggle()"><li><i class="fa-solid fa-pen-to-square fa-xl"></i></li></a>
+                <a href="#" onclick="calendarToggle()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
                 <a href="allTasks.html"><li><i class="fa-solid fa-list-check fa-xl"></i></li></a>
-                <a href="#" onclick="myFunction()"><li><i class="fa-solid fa-calendar-days fa-xl"></i></li></a>
-                <a href="#"><li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li></a>
             </ul>
 
             <ul>
                 <a href="#" onclick="refreshFunction()"><li><i class="fa-solid fa-arrows-rotate fa-xl"></i></li></a>
-                <a href="trash.html"><li><i class="fa-solid fa-trash fa-xl"></i></li></a>
             </ul>
         </nav>
 
@@ -33,17 +40,13 @@
                 <ul>
                     <a href="index.html"><li><i class="fa-solid fa-calendar-day fa-md"></i>Daily tasks</li></a>
                     <a href="futureTasks.html"><li><i class="fa-solid fa-clipboard-list fa-md"></i> For the future</li></a>
-                    <a href="urgent.html" ><li  class="link-active"><i class="fa-solid fa-triangle-exclamation fa-md link-active"></i>Urgent tasks</li></a>
-                    <a href="allTasks.html"><li><i class="fa-solid fa-list-check fa-md"></i>All tasks</li></a>
+                    <a href="urgent.html" ><li class="link-active"><i class="fa-solid fa-triangle-exclamation fa-md link-active"></i>Urgent tasks<span class="dailyCounterActive">0</span></li></a>
                 </ul>
             </div>
 
             <div class="main-heading">
-                <h1><i class="fa-solid fa-triangle-exclamation fa-xs"></i>Urgent tasks</h1>
-                <div class="to-do-input">
-                    <input type="text" id="item" placeholder="Enter a title for your task">
-                    <button id="enter" class="btn btn-success">Create new task +</button>
-                </div>
+                <h1><i class="fa-solid fa-calendar-day fa-xs"></i>Urgent tasks</h1>
+
             </div>
 
             <div class="date-grid-container">
@@ -51,21 +54,38 @@
             </div>
 
             <div class="to-do">
-                <div class="auto-jsCalendar">
-                    
+                <!-- <form> 
+                    <div class="container-fluid" align="center"> 
+                        <input type="text" size="25"
+                            placeholder="Search tasks" id="searched"> 
+            
+                        <button type="button" class="searchBtn btn-success" onclick="highlight('0');"> 
+            
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>   
+                        </button> 
+                    </div> 
+                </form>  -->
+                <div class="to-do-input">
+                    <input type="text" id="item" placeholder="Enter a title for your task" style="display: none;">
+                    <button id="enter" class="btn btn-success" style="display: none;">Create +</button>
                 </div>
                 
+                <div class="auto-jsCalendar">
+                </div>
                 <div class="logo">
                     <img src="Images/green-pencil-with-positive-questionnaire.jpg" width="200px" height="220px">
                 </div>
             </div>
 
             <div class="main-section grid-col-span-2">
+                
                 <div class="to-do-list" >
                     
                 </div>
             </div>
         </div>
+
+
     </main>
 
     <script type="text/javascript" src="jsCalendar.js"></script>

@@ -130,9 +130,9 @@ function calendarToggle() {
   }
 }
 
-function searchToggle() {
-  let x = document.querySelector("#searched");
-  let y = document.querySelector(".searchBtn");
+function createToggle() {
+  let x = document.querySelector("#enter");
+  let y = document.querySelector("#item");
   
 
   if (x.style.display === "inline-block" && y.style.display === "inline-block") {
