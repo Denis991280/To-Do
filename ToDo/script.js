@@ -144,17 +144,17 @@ function searchToggle() {
   }
 }
 
-function highlight(param) { 
+// function highlight(param) { 
 
-  let markText = new Mark(document.querySelectorAll(".select")); 
+//   let markText = new Mark(document.querySelectorAll(".select")); 
 
-  markText.unmark(); 
+//   markText.unmark(); 
 
-  markText.mark( 
-    document.getElementById("searched").value.style.color = "blue", 
-    { className: 'a' + param }
-  ); 
-} 
+//   markText.mark( 
+//     document.getElementById("searched").value.style.color = "blue", 
+//     { className: 'a' + param }
+//   ); 
+// } 
 
 
 
